@@ -1,0 +1,44 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #ff5400;
+  padding: 2%;
+  justify-content: flex-end;
+}
+
+.header-image {
+  width: 80px;
+  height: 50px;
+  margin-right: 1rem;
+  border-radius: 10px;
+  position: fixed;
+  right: 200px;
+}
+
+.header {
+  font-size: 1.5rem;
+}
+
+.header-text {
+  font-size: 1.5rem;
+  background-color: #fff;
+  padding: 10px;
+  color: #ff5400;
+  border-radius: 10px;
+  position: fixed;
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: row;
+    text-align: center;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-image {
+    margin-right: 0;
+  }
+}

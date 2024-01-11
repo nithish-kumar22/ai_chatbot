@@ -1,0 +1,256 @@
+/* General Styles */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+}
+
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #f7f7f7;
+  width: 250px;
+  height: 80%;
+  position: fixed;
+  top: 17%;
+  left: -250px;
+  transition: left 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+  background-color: #ff5400;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  z-index: 3;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Dropdown styles within the sidebar */
+.dropdown {
+  border-bottom: 1px solid #ddd;
+}
+#dropdown-item {
+  font-size: 0.6rem;
+  color: "#ccc";
+  margin-left: 10%;
+}
+
+#dropdown-item h2 {
+  font-weight: 400;
+}
+
+.dropdown-button {
+  background-color: #eee;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  font-size: 0.5rem;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #fff;
+}
+
+.dropdown-content.open {
+  display: block;
+}
+
+/* Chat button */
+.chatbtn {
+  background-color: #ff5400;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  width: 230px;
+  margin-top: 10px;
+  position: fixed;
+}
+
+/* Chat container */
+#chat-container {
+  align-items: center;
+  margin-left: 18%;
+  margin-right: 8%;
+  margin-bottom: 10%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex: 5;
+  flex-direction: column;
+}
+#info-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 10%;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#info-container h2 {
+  width: 100%;
+}
+
+#info-container li {
+  margin-top: 20px;
+}
+
+#info-container p {
+  margin-top: 20px;
+}
+
+#chat-messages {
+  height: 70vh;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#chat-messages p {
+  margin-top: 10px;
+}
+
+#inputandbutton {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+#chat-input {
+  width: 80%;
+  height: 20px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Send button */
+#send-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5d2c1;
+  color: #000;
+  border: none;
+  padding: 7px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 5%;
+  height: 65%;
+  margin-top: 10px;
+  margin-left: 5rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  /* Sidebar should overlay content and be toggleable */
+  .sidebar {
+    width: 80%;
+    left: -80%;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-toggle {
+    left: 80%; /* Position toggle button correctly */
+  }
+
+  #container {
+    flex-direction: column;
+  }
+
+  .chatbtn {
+    position: absolute;
+    bottom: 10px;
+    width: 100px;
+  }
+
+  #inputandbutton {
+    flex-direction: column;
+  }
+
+  #chat-input {
+    width: calc(100% - 40px); /* Adjust input width on mobile */
+    margin-bottom: 10px;
+  }
+
+  #send-button {
+    width: 100%;
+  }
+
+  #dropdown-item {
+    font-size: 0.3rem;
+  }
+  #dropdown-item h2 {
+    font-size: 0.3rem;
+    padding-top: 2px;
+    font-weight: bold;
+  }
+  .sidebar-toggle {
+    margin-top: 1.4%;
+    left: 0;
+  }
+
+  #inputandbutton {
+    width: 130%;
+    flex-direction: row;
+  }
+  #chat-container {
+    width: 80%;
+  }
+  #send-button {
+    margin-right: 50px;
+    width: 15%;
+    padding: 2px;
+    margin-top: -1px;
+  }
+  #chat-input {
+    margin-left: 40px;
+    padding: 15px;
+  }
+  #chat-input::placeholder {
+    font-size: 11px;
+  }
+}
