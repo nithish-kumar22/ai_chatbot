@@ -74,6 +74,10 @@ html {
   font-size: 0.5rem;
 }
 
+.dropdown-button h1 {
+  font-size: 0.9rem;
+}
+
 .dropdown-content {
   display: none;
   background-color: #fff;
